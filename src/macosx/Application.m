@@ -39,4 +39,17 @@
     [super sendEvent:theEvent];	
 }
 
+- (void)finishLaunching
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *defaults = @{
+                               @"OEDefaultResourcesPath" : [[NSBundle mainBundle] resourceURL].path,
+                                };
+    
+    [userDefaults registerDefaults: defaults];
+    
+    [super finishLaunching];
+}
+
 @end

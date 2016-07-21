@@ -159,7 +159,7 @@
         
         ((OEComponent *)device)->postMessage(NULL, DEVICE_GET_LABEL, &value);
         label = [[NSString stringWithCPPString:value] retain];
-        NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+        NSString *resourcePath = [[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path;
         ((OEComponent *)device)->postMessage(NULL, DEVICE_GET_IMAGEPATH, &value);
         NSString *imagePath = [resourcePath stringByAppendingPathComponent:
                                [NSString stringWithCPPString:value]];
@@ -280,7 +280,7 @@
                 locationLabel = [[[NSString stringWithCPPString:theLocationLabel] stringByAppendingFormat:@"%@",
                                   theLabel] retain];
         }
-        NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+        NSString *resourcePath = [[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path;
         NSString *imagePath = [resourcePath stringByAppendingPathComponent:theImagePath];
         image = [[NSImage alloc] initByReferencingFile:imagePath];
         

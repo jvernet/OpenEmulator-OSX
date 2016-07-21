@@ -25,6 +25,8 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults removeObserver:self
                       forKeyPath:@"OEDefaultTemplatePath"];
+    [userDefaults removeObserver:self
+                      forKeyPath:@"OEDefaultResourcesPath"];
     
     [templateChooserViewController release];
     
@@ -56,8 +58,13 @@
     [fTemplateChooserView addSubview:view];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
     [userDefaults addObserver:self
                    forKeyPath:@"OEDefaultTemplatePath"
+                      options:NSKeyValueObservingOptionNew
+                      context:nil];
+    [userDefaults addObserver:self
+                   forKeyPath:@"OEDefaultResourcesPath"
                       options:NSKeyValueObservingOptionNew
                       context:nil];
 }
@@ -67,7 +74,7 @@
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-    if ([keyPath isEqualToString:@"OEDefaultTemplatePath"])
+    if ([keyPath isEqualToString:@"OEDefaultTemplatePath"] || [keyPath isEqualToString:@"OEDefaultResourcesPath"])
         [self updateGeneralView];
 }
 
@@ -165,8 +172,10 @@
 
 - (void)updateGeneralView
 {
-    [self setUseTemplate:[[NSUserDefaults standardUserDefaults]
-                                     boolForKey:@"OEDefaultTemplateEnabled"]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [self setUseTemplate:[defaults boolForKey:@"OEDefaultTemplateEnabled"]];
+    [fChooseResourceField setStringValue: [defaults URLForKey:@"OEDefaultResourcesPath"].path];
 }
 
 - (void)setUseTemplate:(BOOL)useTemplate
@@ -217,6 +226,31 @@
           contextInfo:nil];
 }
 
+- (IBAction)openChooseResourcePath:(id)sender
+{
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    
+    [openDlg setAllowsMultipleSelection:NO];
+    [openDlg setCanChooseFiles:NO];
+    [openDlg setCanChooseDirectories:YES];
+    
+    if ([openDlg runModal] == NSFileHandlingPanelOKButton ) {
+        [self setUseResourcesPath:openDlg.directoryURL];
+    }
+}
+
+- (IBAction)showResourcePath:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [[NSWorkspace sharedWorkspace] openURL: [defaults URLForKey:@"OEDefaultResourcesPath"]];
+}
+
+- (IBAction)resetResourcePath:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setURL:[[NSBundle mainBundle] resourceURL] forKey:@"OEDefaultResourcesPath"];
+}
+
 - (void)templateChooserSelectionDidChange:(id)sender
 {
     [fTemplateChooserChooseButton setEnabled:
@@ -244,6 +278,11 @@
 - (IBAction)closeTemplateChooser:(id)sender
 {
     [NSApp endSheet:fTemplateChooserSheet];
+}
+
+- (void)setUseResourcesPath:(NSURL*)path
+{
+    [[NSUserDefaults standardUserDefaults] setURL:path forKey:@"OEDefaultResourcesPath"];
 }
 
 - (void)didEndSheet:(NSWindow *)sheet

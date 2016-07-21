@@ -47,7 +47,7 @@
     [filterPaths addObject:@""];
     [fPathFilter addItemWithTitle:NSLocalizedString(@"Library", @"Library Root")];
     
-    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+    NSString *resourcePath = [[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path;
     NSString *libraryPath = [resourcePath
                              stringByAppendingPathComponent:@"library"];
     

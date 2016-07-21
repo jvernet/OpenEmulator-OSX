@@ -17,5 +17,6 @@
 
 - (void)setCapture:(BOOL)value;
 - (void)sendEvent:(NSEvent *)theEvent;
+- (void)finishLaunching;
 
 @end

@@ -985,7 +985,7 @@ dataCellForTableColumn:(NSTableColumn *)tableColumn
           label:(NSString *)theLabel
          toItem:(EmulationItem *)theItem
 {
-    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+    NSString *resourcePath = [[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path;
     NSString *libraryPath = [resourcePath
                              stringByAppendingPathComponent:@"library"];
     NSString *path = [libraryPath stringByAppendingPathComponent:thePath];
