@@ -18,6 +18,11 @@
     IBOutlet id fAudioView;
     IBOutlet id fVideoView;
     
+    IBOutlet id fChooseResourceButton;
+    IBOutlet id fShowResourceButton;
+    IBOutlet id fResetResourceButton;
+    IBOutlet id fChooseResourceField;
+    
     IBOutlet id fShowTemplateChooserRadio;
     IBOutlet id fUseTemplateRadio;
     IBOutlet id fChooseTemplateButton;
@@ -34,6 +39,10 @@
 - (void)updateGeneralView;
 - (void)setUseTemplate:(BOOL)useTemplate;
 - (IBAction)useTemplateDidChange:(id)sender;
+
+- (IBAction)openChooseResourcePath:(id)sender;
+- (IBAction)showResourcePath:(id)sender;
+- (IBAction)resetResourcePath:(id)sender;
 
 - (IBAction)openTemplateChooser:(id)sender;
 - (IBAction)chooseTemplate:(id)sender;

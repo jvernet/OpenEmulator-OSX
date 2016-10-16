@@ -53,7 +53,7 @@
     
     didLoad = YES;
     
-    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+    NSString *resourcePath = [[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path;
     
     // Read OE document
     OEDocument oeDocument;

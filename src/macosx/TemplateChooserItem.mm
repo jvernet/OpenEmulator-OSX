@@ -49,7 +49,7 @@
     if (oeDocument.isOpen())
     {
         OEHeaderInfo headerInfo = oeDocument.getHeaderInfo();
-        NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+        NSString *resourcePath = [[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path;
         
         label = [[[path lastPathComponent] stringByDeletingPathExtension]
                  retain];

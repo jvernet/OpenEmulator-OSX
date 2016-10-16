@@ -50,7 +50,7 @@ OEComponent *constructCanvas(void *userData, OEComponent *device, OECanvasType c
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
-    OpenGLCanvas *canvas = new OpenGLCanvas([[[NSBundle mainBundle] resourcePath] cppString],
+    OpenGLCanvas *canvas = new OpenGLCanvas([[[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path cppString],
                                             canvasType);
     string label;
     device->postMessage(NULL, DEVICE_GET_LABEL, &label);
@@ -283,7 +283,7 @@ void destroyCanvas(void *userData, OEComponent *canvas)
     
     OEEmulation *theEmulation = new OEEmulation();
     
-    theEmulation->setResourcePath([[[NSBundle mainBundle] resourcePath] cppString]);
+    theEmulation->setResourcePath([[[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path cppString]);
     theEmulation->setConstructCanvas(constructCanvas);
     theEmulation->setDestroyCanvas(destroyCanvas);
     theEmulation->setUserData(self);

@@ -154,7 +154,9 @@
 
 - (void)loadGroups
 {
-    NSString *templatesPath = [[[NSBundle mainBundle] resourcePath]
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *templatesPath = [[defaults URLForKey:@"OEDefaultResourcesPath"].path
                                stringByAppendingPathComponent:@"templates"];
     
     [groups removeAllObjects];
@@ -190,7 +192,7 @@
                                         "Template Chooser.");
     if ([selectedGroup compare:group] != NSOrderedSame)
     {
-        NSString *templatesPath = [[[NSBundle mainBundle] resourcePath]
+        NSString *templatesPath = [[[NSUserDefaults standardUserDefaults] URLForKey:@"OEDefaultResourcesPath"].path
                                    stringByAppendingPathComponent:@"templates"];
         NSString *groupPath = [templatesPath stringByAppendingPathComponent:selectedGroup];
         [self addTemplatesAtPath:groupPath
