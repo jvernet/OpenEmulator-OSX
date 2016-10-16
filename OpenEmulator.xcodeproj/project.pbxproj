@@ -14,6 +14,7 @@
 		002F57E815CDF4B400C19659 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F57E715CDF4B400C19659 /* libvorbis.a */; };
 		002F57EA15CDF4B900C19659 /* libzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F57E915CDF4B900C19659 /* libzip.a */; };
 		002F57EC15CDF4C000C19659 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F57EB15CDF4C000C19659 /* libsndfile.a */; };
+		002F57EE15CDF4C600C19659 /* libsamplerate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F57ED15CDF4C600C19659 /* libsamplerate.a */; };
 		002F57F015CDF4CB00C19659 /* libportaudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F57EF15CDF4CB00C19659 /* libportaudio.a */; };
 		002F57F415CDF66B00C19659 /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F57F315CDF66B00C19659 /* libogg.a */; };
 		002F57F815CDF6F800C19659 /* libvorbisenc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F57F715CDF6F800C19659 /* libvorbisenc.a */; };
@@ -33,6 +34,7 @@
 		496AF1DC18C677B600B35159 /* library in Resources */ = {isa = PBXBuildFile; fileRef = 496AF1D818C677B600B35159 /* library */; };
 		496AF1DD18C677B600B35159 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 496AF1D918C677B600B35159 /* sounds */; };
 		496AF1DE18C677B600B35159 /* templates in Resources */ = {isa = PBXBuildFile; fileRef = 496AF1DA18C677B600B35159 /* templates */; };
+		49EB4C4318C63B1800AD682A /* libFLAC.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EB4C4218C63B1800AD682A /* libFLAC.dylib */; };
 		49EB4CB218C63BE500AD682A /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EB4C4B18C63BE500AD682A /* Application.m */; };
 		49EB4CB318C63BE500AD682A /* AudioControlsWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49EB4C4D18C63BE500AD682A /* AudioControlsWindowController.mm */; };
 		49EB4CB418C63BE500AD682A /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EB4C4F18C63BE500AD682A /* BackgroundView.m */; };
@@ -325,8 +327,8 @@
 		49EB4F0118C6709F00AD682A /* PAAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EB4EF718C6709F00AD682A /* PAAudio.h */; };
 		49EB4F0818C6737700AD682A /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EB4F0618C6737700AD682A /* util.cpp */; };
 		49EB4F0918C6737700AD682A /* util.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EB4F0718C6737700AD682A /* util.h */; };
-		4E6BD9801DB3A8050040F826 /* FLAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6BD97F1DB3A8050040F826 /* FLAC.framework */; };
-		4E6BD9821DB3A8360040F826 /* samplerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6BD9811DB3A8360040F826 /* samplerate.framework */; };
+		4E6BD9841DB3AA020040F826 /* roms in Resources */ = {isa = PBXBuildFile; fileRef = 4E6BD9831DB3AA020040F826 /* roms */; };
+		4E6BD9851DB3AA050040F826 /* roms in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4E6BD9831DB3AA020040F826 /* roms */; };
 		AB28CDEB1D20C190003C4C08 /* SAMDACCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB28CDE91D20C190003C4C08 /* SAMDACCard.cpp */; };
 		B32914241AD16C4400EB7046 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B32914231AD16C4400EB7046 /* images */; };
 /* End PBXBuildFile section */
@@ -384,8 +386,9 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 7;
 			files = (
+				4E6BD9851DB3AA050040F826 /* roms in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +428,7 @@
 		496AF1D818C677B600B35159 /* library */ = {isa = PBXFileReference; lastKnownFileType = folder; name = library; path = modules/libemulation/res/library; sourceTree = "<group>"; };
 		496AF1D918C677B600B35159 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = modules/libemulation/res/sounds; sourceTree = "<group>"; };
 		496AF1DA18C677B600B35159 /* templates */ = {isa = PBXFileReference; lastKnownFileType = folder; name = templates; path = modules/libemulation/res/templates; sourceTree = "<group>"; };
+		49EB4C4218C63B1800AD682A /* libFLAC.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFLAC.dylib; path = ../../../../opt/local/lib/libFLAC.dylib; sourceTree = "<group>"; };
 		49EB4C4A18C63BE500AD682A /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		49EB4C4B18C63BE500AD682A /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		49EB4C4C18C63BE500AD682A /* AudioControlsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioControlsWindowController.h; sourceTree = "<group>"; };
@@ -744,8 +748,7 @@
 		49EB4EF718C6709F00AD682A /* PAAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAAudio.h; path = "modules/libemulation/src/libemulation-hal/PAAudio.h"; sourceTree = SOURCE_ROOT; };
 		49EB4F0618C6737700AD682A /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = modules/libemulation/src/libutil/util.cpp; sourceTree = "<group>"; };
 		49EB4F0718C6737700AD682A /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = modules/libemulation/src/libutil/util.h; sourceTree = "<group>"; };
-		4E6BD97F1DB3A8050040F826 /* FLAC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAC.framework; path = ../../../../Library/Frameworks/FLAC.framework; sourceTree = "<group>"; };
-		4E6BD9811DB3A8360040F826 /* samplerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = samplerate.framework; path = ../../../../Library/Frameworks/samplerate.framework; sourceTree = "<group>"; };
+		4E6BD9831DB3AA020040F826 /* roms */ = {isa = PBXFileReference; lastKnownFileType = folder; path = roms; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* OpenEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB28CDE91D20C190003C4C08 /* SAMDACCard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SAMDACCard.cpp; path = "Don't Ask/SAMDACCard.cpp"; sourceTree = "<group>"; };
 		AB28CDEA1D20C190003C4C08 /* SAMDACCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAMDACCard.h; path = "Don't Ask/SAMDACCard.h"; sourceTree = "<group>"; };
@@ -786,7 +789,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6BD9821DB3A8360040F826 /* samplerate.framework in Frameworks */,
 				00039F0112B04EAA0025D374 /* libemulation.a in Frameworks */,
 				00039E9B12B042210025D374 /* libemulation-hal.a in Frameworks */,
 				00365CFA1516F4E700978DF6 /* libdiskimage.a in Frameworks */,
@@ -796,9 +798,9 @@
 				0054E6311131BEE7006D32D9 /* Carbon.framework in Frameworks */,
 				0054E66C1131BF58006D32D9 /* Quartz.framework in Frameworks */,
 				00F4D0BF12E2E42F00B7F5E6 /* ApplicationServices.framework in Frameworks */,
-				4E6BD9801DB3A8050040F826 /* FLAC.framework in Frameworks */,
 				003B167C12EE27ED003FB8F6 /* CoreAudioKit.framework in Frameworks */,
 				003B16B212EE2A05003FB8F6 /* AudioToolbox.framework in Frameworks */,
+				49EB4C4318C63B1800AD682A /* libFLAC.dylib in Frameworks */,
 				003B16B712EE2A0D003FB8F6 /* AudioUnit.framework in Frameworks */,
 				003B16C312EE2A18003FB8F6 /* CoreAudio.framework in Frameworks */,
 				003B16C812EE2A61003FB8F6 /* CoreServices.framework in Frameworks */,
@@ -809,6 +811,7 @@
 				002F57E815CDF4B400C19659 /* libvorbis.a in Frameworks */,
 				002F57EA15CDF4B900C19659 /* libzip.a in Frameworks */,
 				002F57EC15CDF4C000C19659 /* libsndfile.a in Frameworks */,
+				002F57EE15CDF4C600C19659 /* libsamplerate.a in Frameworks */,
 				002F57F015CDF4CB00C19659 /* libportaudio.a in Frameworks */,
 				002F57F415CDF66B00C19659 /* libogg.a in Frameworks */,
 				002F57F815CDF6F800C19659 /* libvorbisenc.a in Frameworks */,
@@ -940,12 +943,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* OpenEmulator */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				4E6BD9811DB3A8360040F826 /* samplerate.framework */,
-				ABEAE5C21D1E11D4006B3812 /* Don't Ask S.A.M..xml */,
-				ABEAE5C01D1E11C2006B3812 /* S.A.M. Front.png */,
-=======
->>>>>>> OpenEmulatorProject/add-support-for-user-rom-directory
+				4E6BD9831DB3AA020040F826 /* roms */,
 				B32914231AD16C4400EB7046 /* images */,
 				496AF1D818C677B600B35159 /* library */,
 				496AF1D918C677B600B35159 /* sounds */,
@@ -964,8 +962,8 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4E6BD97F1DB3A8050040F826 /* FLAC.framework */,
 				49EB4D1318C65CD500AD682A /* libpng16.a */,
+				49EB4C4218C63B1800AD682A /* libFLAC.dylib */,
 				002F57F315CDF66B00C19659 /* libogg.a */,
 				002F57EF15CDF4CB00C19659 /* libportaudio.a */,
 				002F57ED15CDF4C600C19659 /* libsamplerate.a */,
@@ -1733,6 +1731,7 @@
 				49EB4D0818C6536100AD682A /* Canvas.xib in Resources */,
 				49EB4CD018C63BE500AD682A /* EmulationShow.png in Resources */,
 				49EB4CD518C63BE500AD682A /* EmulationUnmountPressed.png in Resources */,
+				4E6BD9841DB3AA020040F826 /* roms in Resources */,
 				496AF1DE18C677B600B35159 /* templates in Resources */,
 				49EB4CD618C63BE500AD682A /* EmulationUnmountRollover.png in Resources */,
 				49EB4CDD18C63BE500AD682A /* IconInspector.png in Resources */,
@@ -2200,7 +2199,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/raw/devel/OpenEmulator/src/macosx,
-					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/src/macosx/Info.plist";
@@ -2216,7 +2214,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/raw/devel/OpenEmulator/src/macosx,
-					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/src/macosx/Info.plist";
