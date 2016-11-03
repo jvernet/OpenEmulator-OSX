@@ -328,7 +328,6 @@
 		49EB4F0818C6737700AD682A /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EB4F0618C6737700AD682A /* util.cpp */; };
 		49EB4F0918C6737700AD682A /* util.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EB4F0718C6737700AD682A /* util.h */; };
 		4E6BD9841DB3AA020040F826 /* roms in Resources */ = {isa = PBXBuildFile; fileRef = 4E6BD9831DB3AA020040F826 /* roms */; };
-		4E6BD9851DB3AA050040F826 /* roms in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4E6BD9831DB3AA020040F826 /* roms */; };
 		AB28CDEB1D20C190003C4C08 /* SAMDACCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB28CDE91D20C190003C4C08 /* SAMDACCard.cpp */; };
 		B32914241AD16C4400EB7046 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B32914231AD16C4400EB7046 /* images */; };
 /* End PBXBuildFile section */
@@ -388,7 +387,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				4E6BD9851DB3AA050040F826 /* roms in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
